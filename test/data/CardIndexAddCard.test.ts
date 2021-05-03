@@ -8,15 +8,12 @@ var cardIndexAddCard: CardIndexAddCard;
 var cards: Cards;
 
 beforeEach( async () => {
-    cards = new Cards();
+    cards = Cards.getInstance();
     cardIndexRepositoryMemory = new CardIndexRepositoryMemory();
-    cardIndexAddCard = new CardIndexAddCard(cards, cardIndexRepositoryMemory);
+    cardIndexAddCard = new CardIndexAddCard(cardIndexRepositoryMemory);
 });
 
 test("Can add card", async function () {
-    const cardIndexRepositoryMemory = new CardIndexRepositoryMemory();
-    const cardIndexAddCard = new CardIndexAddCard(cards, cardIndexRepositoryMemory);
-
     var card = await cardIndexAddCard.execute("a", "b", null, null);
     expect(card).not.toBeNull();
 

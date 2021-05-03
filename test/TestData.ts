@@ -1,11 +1,11 @@
-import CardIndexAddCard from "../../src/data/services/CardIndexAddCard";
+import Cards from "../src/core/entities/Cards";
 
-
-async function Create(cardIndexAddCard: CardIndexAddCard) {
-    await cardIndexAddCard.execute("Chicken roasted", "desc", null, null, ["/chicken/whole"], ["roast", "chicken"]);
-    await cardIndexAddCard.execute("Salad with chicken", "desc", null, null, ["/Chicken/breast"], ["salad", "CHICKEN"]);
-    await cardIndexAddCard.execute("Spaghetti with broccoli", "desc", null, null, ["/pasta/spaghetti/vegetables"], ["pasta"]);
-    await cardIndexAddCard.execute("Rice and vegetables", "desc", null, null, ["/rice/vegetables"], ["main", "vegetarian"]);
+function Create() {
+    Cards.getInstance().addCard
+    Cards.getInstance().addCard("Chicken roasted", "desc", null, null, ["/chicken/whole"], ["roast", "chicken"]);
+    Cards.getInstance().addCard("Salad with chicken", "desc", null, null, ["/Chicken/breast"], ["salad", "CHICKEN"]);
+    Cards.getInstance().addCard("Spaghetti with broccoli", "desc", null, null, ["/pasta/spaghetti/vegetables"], ["pasta"]);
+    Cards.getInstance().addCard("Rice and vegetables", "desc", null, null, ["/rice/vegetables"], ["main", "vegetarian"]);
 }
 
 // function Nodes(): IndexNode[] {

@@ -109,7 +109,7 @@ test("Card belongsToByNodes", function () {
     expect(card.belongsToByIndices([""])).toBeFalsy();
 });
 
-test("Can create card check tags", async function () {
+test("Can create card check tags", function () {
     var card = new Card("a", "b", null, null, ["c"], ["AbC","ABC"]);
     expect(card.tags.length).toEqual(1);
     expect(card.tags[0]).toEqual("abc");

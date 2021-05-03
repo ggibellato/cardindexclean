@@ -1,11 +1,10 @@
+import Cards from "../../core/entities/Cards";
 import { CardIndexGetTags } from "../../core/usecases/CardIndexGetTags";
-import CardIndexRepository from "../repository/CardIndexRepository";
 
 export default class CardIndexGetTagsService implements CardIndexGetTags {
-    constructor(private readonly cardIndexRepository: CardIndexRepository) { }
+    constructor() { }
 
-    async execute(): Promise<string[]> {
-        const ret = await this.cardIndexRepository.getTags();
-        return ret
+    execute(): string[] {
+        return Cards.getInstance().getTags();
     }
 }

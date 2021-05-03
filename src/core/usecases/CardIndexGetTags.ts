@@ -1,3 +1,3 @@
 export interface CardIndexGetTags {
-    execute():Promise<string[]>;
+    execute(): string[];
 }

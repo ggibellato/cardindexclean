@@ -20,14 +20,4 @@ export default class CardIndexRepositoryMemory implements CardIndexRepository {
         this.cards.push(card);
         return null;
     }
-
-    getCards(): Promise<CardModel[]> {
-        return Promise.resolve(this.cards);
-    }
-
-    getTags(): Promise<string[]> {
-        var ret: string[];
-        ret = [...new Set(this.cards.map(c => c.tags).flat().sort())];
-        return Promise.resolve(ret);
-    }
 }
