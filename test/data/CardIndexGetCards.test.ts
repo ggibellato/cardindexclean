@@ -1,15 +1,20 @@
-import CardIndexRepository from "../src/data/repository/CardIndexRepository";
-import CardIndexGetCards from "../src/data/services/CardIndexGetCards";
-import CardIndexRepositoryMemory from "../src/infra/repository/CardIndexRepositoryMemory";
+import Cards from "../../src/core/entities/Cards";
+import CardIndexRepository from "../../src/data/repository/CardIndexRepository";
+import CardIndexAddCard from "../../src/data/services/CardIndexAddCard";
+import CardIndexGetCards from "../../src/data/services/CardIndexGetCards";
+import CardIndexRepositoryMemory from "../../src/infra/repository/CardIndexRepositoryMemory";
 import TestData from "./TestData";
 
 var cardIndexRepositoryMemory: CardIndexRepository;
 var cardIndexGetCards: CardIndexGetCards;
+var cards: Cards;
 
 beforeEach( async () => {
+    cards = new Cards();
     cardIndexRepositoryMemory = new CardIndexRepositoryMemory();
-    await TestData.Create(cardIndexRepositoryMemory);
     cardIndexGetCards = new CardIndexGetCards(cardIndexRepositoryMemory);
+    var cardIndexAddCard = new CardIndexAddCard(cards, cardIndexRepositoryMemory);
+    await TestData.Create(cardIndexAddCard);
 });
 
 test("Get cards by title", async function () {

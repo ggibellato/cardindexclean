@@ -1,9 +1,10 @@
 import Card from "../../core/entities/Card";
+import Cards from "../../core/entities/Cards";
 import { CardIndexGetCards } from "../../core/usecases/CardIndexGetCards";
-import CardIndexRepository from "../repository/CardIndexRepository";
+
 
 export default class CardIndexAddCards implements CardIndexGetCards {
-    constructor(private readonly cardIndexRepository: CardIndexRepository) { }
+    constructor(private readonly cards: Cards) { }
 
     async execute(title: string, indices: string[] = [], tags: string[] = []): Promise<Card[]> {
         const cardsModel = await this.cardIndexRepository.getCards();

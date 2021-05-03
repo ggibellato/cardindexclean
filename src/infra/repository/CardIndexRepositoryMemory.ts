@@ -8,7 +8,7 @@ export default class CardIndexRepositoryMemory implements CardIndexRepository {
         this.cards = [];
     }
 
-    saveCard(title: string, description: string, where: URL, imageAddress: URL, indices: string[], tags: string[]): Promise<null> {
+    saveCard(title: string, description: string, where: string, imageAddress: string, indices: string[], tags: string[]): Promise<null> {
         const card: CardModel = {
             title: title,
             description: description,
