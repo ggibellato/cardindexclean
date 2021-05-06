@@ -93,3 +93,48 @@ exit
 npm run test
 npm run test
 exit
+npm run test
+npm run test
+npm run test
+ls
+pwd
+cd .npm/_lo
+cd .npm/_logs
+ls
+explorer.exe .
+cat 2021-05-06T11_13_00_202Z-debug.log 
+clear
+ls
+npm install
+whoami
+sudo npm install
+cls
+npm run
+npm run test
+npx
+tsc
+npm run test
+npx tsc
+tsc
+jest
+npc tsc
+ls
+cd ..
+ls
+cd ..
+cd ~
+ls
+npm
+npx
+tsc
+jest
+node
+ls
+exit
+npm run test
+exit
+npm run test
+exit
+npm run test
+exit
+exit

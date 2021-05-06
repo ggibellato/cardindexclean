@@ -1,3 +1,13 @@
-/node_modules
-/.npm
-/dist
+.cache/
+.config/
+.gnupg/
+.npm/
+.ssh/
+.vscode/
+.vscode-server/
+
+node_modules/
+dist/
+
+.ash_history
+.bash_history

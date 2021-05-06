@@ -4,6 +4,8 @@ RUN apk add bash
 
 WORKDIR /home/node
 
+VOLUME /home/node/node_modules
+
 COPY . .
 
 RUN npm install
