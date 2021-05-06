@@ -1,9 +1,9 @@
 docker build -t cardindexclean .
 
 # run the image and go to shell
-docker-compose run cardindexclean bash
+docker-compose run cardindexclean
 
-docker run -it --rm cardindexclean bash
+docker run -it --rm -v $(pwd):/home/node cardindexclean bash 
 
 # remove the containers stopped
 docker-compose rm cardindexclean

@@ -8,6 +8,9 @@ VOLUME /home/node/node_modules
 
 COPY . .
 
+RUN npm install --global typescript
+RUN npm install --global jest 
 RUN npm install
 
 USER node
+

@@ -138,3 +138,62 @@ exit
 npm run test
 exit
 exit
+tsc
+exit
+jest
+tsc
+jest
+npm run test
+ls
+ls src/
+exit
+ls
+npm test
+tsc
+jset ./dist
+jest ./dist/
+exit
+cat src/main.ts 
+cat src/main.ts 
+exit
+ls
+src
+cat src/main.ts 
+ls node_modules/
+clear
+cat src/main.ts 
+npm run main
+exit
+ls
+ls
+ls dist
+node ./dist/src/main.js
+node ./dist/src/main.js
+cat src/main.ts 
+cat src/main.ts 
+cat src/main.ts 
+cat src/main.ts 
+ls
+npm
+npm /src/main.ts
+node src/main.ts 
+node src/main.ts 
+exit
+node src/main.ts 
+node src/main.ts 
+exit
+cat src/main.ts 
+cat src/main.ts 
+node src/main.ts 
+exit
+exit
+tsc
+ls
+node src/main.ts 
+node src/main.ts 
+exit
+jest ./dist/
+node src/main.ts 
+node src/main.ts 
+exot
+exit

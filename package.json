@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "main": "npx tsc && node ./dist/main.js",
-    "test": "npx tsc && jest ./dist"
+    "main": "tsc && node ./dist/src/main.js",
+    "test": "tsc && jest ./dist"
   },
   "author": "",
   "license": "ISC",
