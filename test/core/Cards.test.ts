@@ -61,6 +61,23 @@ test("getTags from TestData", () =>{
     expect(tags).toStrictEqual(TestData.Tags());
 });
 
+test("getIndices from empty Cards", function () {
+    var indices = Cards.getInstance().getIndices();
+    expect(indices).toStrictEqual([]);
+})
+
+test("getIndices from TestData", () =>{
+    TestData.Create();
+    var cardIndices = Cards.getInstance().getIndices();
+    var testData = TestData.Indices();
+    expect(cardIndices).toStrictEqual(testData);
+    expect(cardIndices[0]).toStrictEqual(testData[0]);
+    expect(cardIndices[1]).toStrictEqual(testData[1]);
+    expect(cardIndices[2]).toStrictEqual(testData[2]);
+    expect(cardIndices[1].indices[0]).toStrictEqual(testData[1].indices[0]);
+});
+
+
 test("getCards by title", function () {
     TestData.Create();
 

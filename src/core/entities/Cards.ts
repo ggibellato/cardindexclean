@@ -1,4 +1,5 @@
 import Card from "./Card";
+import { Index } from "./Index";
 
 export default class Cards {
     private static instance: Cards;
@@ -13,6 +14,7 @@ export default class Cards {
     }
 
     cards: Card[] = [];
+    indices: Index[] = [];
 
     addCard(title: string, description: string, where: string, imageAddress: string, indices: string[], tags: string[]): Card {
         var card = new Card(title, description, where, imageAddress, indices, tags)
@@ -23,11 +25,39 @@ export default class Cards {
         else {
             this.cards.push(card);
         }
+        indices.forEach(s => {
+            const sp = s.split("/").filter(e => e).map(e => e.toLowerCase());
+            var owner:Index = null;
+            sp.forEach(idx => {
+                var el = this.indices.filter(e=> e.name == idx);
+                if(el.length === 0) {
+                    if(owner === null) {
+                        owner = {
+                            name: idx,
+                            indices: []
+                        }
+                        this.indices.push(owner);
+                    }
+                    else {
+                        const newIndex:Index = {
+                            name: idx,
+                            indices: []
+                        }
+                        owner.indices.push(newIndex);
+                        owner = newIndex;
+                    }
+                }
+                else {
+                    owner = el[0];
+                }
+            })
+        });
         return card;
     }
 
     reset() {
         this.cards = [];
+        this.indices = [];
     }
 
     length(): number {
@@ -44,6 +74,12 @@ export default class Cards {
 
     getTags(): string[] {
         return [...new Set(this.cards.map(c => c.tags).flat().sort())];
+    }
+
+    getIndices(): Index[] {
+        //var ret: Index[];
+        //ret = [];
+        return this.indices;
     }
 
     getCards(title: string, indices: string[] = [], tags: string[] = []): Card[] {
